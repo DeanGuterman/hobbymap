@@ -1,4 +1,4 @@
-package com.hobbymap.backend;
+package com.hobbymap;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
