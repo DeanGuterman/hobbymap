@@ -5,7 +5,10 @@ import org.springframework.data.jpa.domain.Specification;
 public class LeagueSpecifications {
 
     public static Specification<League> filterByCity(String city){
-        return (root, query, cb) -> {
+        // root is the root entity, meaning League
+        // query is the query being built
+        // cb is the CriteriaBuilder, to construct criteria predicates
+        return (root, query, cb) -> { // Lambda expression for toPredicate
             if (city == null) return null;
             return cb.equal(root.get("city"), city);
         };
