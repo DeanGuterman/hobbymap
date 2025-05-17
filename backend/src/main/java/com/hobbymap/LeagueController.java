@@ -10,11 +10,9 @@ import java.util.List;
 
 @RestController
 public class LeagueController {
-    private final LeagueRepository leagueRepository;
     private final LeagueService leagueService;
 
-    public LeagueController(LeagueRepository leagueRepository, LeagueService leagueService){
-        this.leagueRepository = leagueRepository;
+    public LeagueController(LeagueService leagueService){
         this.leagueService = leagueService;
     }
 
@@ -25,7 +23,7 @@ public class LeagueController {
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String weekday
     ){
-        List<League> leagues = leagueService.getAllLeagues();
+        List<League> leagues = leagueService.getLeagues(city, format, name, weekday);
         return ResponseEntity.ok(leagues);
     }
 }
