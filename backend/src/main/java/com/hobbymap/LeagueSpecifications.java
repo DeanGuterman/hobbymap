@@ -4,31 +4,31 @@ import org.springframework.data.jpa.domain.Specification;
 
 public class LeagueSpecifications {
 
-    static public Specification<League> filterByCity(String city){
-        return (root, query, criteriaBuilder) -> {
+    public static Specification<League> filterByCity(String city){
+        return (root, query, cb) -> {
             if (city == null) return null;
-            return criteriaBuilder.equal(root.get("city"), city);
+            return cb.equal(root.get("city"), city);
         };
     }
 
-    static public Specification<League> filterByFormat(String format){
-        return (root, query, criteriaBuilder) -> {
+    public static Specification<League> filterByFormat(String format){
+        return (root, query, cb) -> {
             if (format == null) return null;
-            return criteriaBuilder.equal(root.get("city"), format);
+            return cb.equal(root.get("city"), format);
         };
     }
 
-    static public Specification<League> filterByName(String name){
-        return (root, query, criteriaBuilder) -> {
+    public static Specification<League> filterByName(String name){
+        return (root, query, cb) -> {
             if (name == null) return null;
-            return criteriaBuilder.equal(root.get("city"), name);
+            return cb.equal(root.get("city"), name);
         };
     }
 
-    static public Specification<League> filterByWeekday(String weekday){
-        return (root, query, criteriaBuilder) -> {
+    public static Specification<League> filterByWeekday(String weekday){
+        return (root, query, cb) -> {
             if (weekday == null) return null;
-            return criteriaBuilder.equal(root.get("city"), weekday);
+            return cb.equal(root.get("city"), weekday);
         };
     }
 }
