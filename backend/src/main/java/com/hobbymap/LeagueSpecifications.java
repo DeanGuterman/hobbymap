@@ -2,7 +2,11 @@ package com.hobbymap;
 
 import org.springframework.data.jpa.domain.Specification;
 
+
+// Helper class to create JPA Specifications for League entity
 public class LeagueSpecifications {
+
+    // Each method creates a specification to filter by
 
     public static Specification<League> filterByCity(String city){
         // root is the root entity, meaning League
@@ -10,7 +14,7 @@ public class LeagueSpecifications {
         // cb is the CriteriaBuilder, to construct criteria predicates
         return (root, query, cb) -> { // Lambda expression for toPredicate
             if (city == null) return null;
-            return cb.equal(root.get("city"), city);
+            return cb.equal(root.get("city"), city); // Equality predicate
         };
     }
 
