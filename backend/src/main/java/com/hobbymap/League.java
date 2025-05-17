@@ -9,9 +9,10 @@ import lombok.*;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
+@NoArgsConstructor // Required by JPA
 @AllArgsConstructor
 @Builder
+//
 public class League {
 
     @Id
