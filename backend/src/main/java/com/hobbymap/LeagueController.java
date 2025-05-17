@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+// REST controller for League related endpoints
 @RestController
 public class LeagueController {
     private final LeagueService leagueService;
@@ -16,6 +17,7 @@ public class LeagueController {
         this.leagueService = leagueService;
     }
 
+    // Endpoint to get leagues with optional filtering by query parameters
     @GetMapping("/leagues")
     public ResponseEntity<List<League>> getLeagues(
             @RequestParam(required = false) String city,
