@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // REST controller for League related endpoints
@@ -19,13 +20,16 @@ public class LeagueController {
 
     // Endpoint to get leagues with optional filtering by query parameters
     @GetMapping("/leagues")
-    public ResponseEntity<List<League>> getLeagues(
+    public ResponseEntity<List<LeagueDTO>> getLeagues(
             @RequestParam(required = false) String city,
             @RequestParam(required = false) String format,
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String weekday
     ){
         List<League> leagues = leagueService.getLeagues(city, format, name, weekday);
-        return ResponseEntity.ok(leagues);
+        List<LeagueDTO> leaguesDTO = leagues.stream()
+                .map(LeagueMapper::toDto)
+                .toList();
+        return ResponseEntity.ok(leaguesDTO);
     }
 }
