@@ -14,5 +14,13 @@ public class LeagueDTO {
     private Format format;
     private String name;
     private Weekday weekday;
+    private double latitude;
+    private double longitude;
+    private String personOfContact;
+    private String personOfContactPhone;
+    private String siteLink;
+    private String whatsappLink;
+    private String facebookLink;
+    private String instagramLink;
 
 }
