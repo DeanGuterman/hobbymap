@@ -1,5 +1,7 @@
-package com.hobbymap;
+package com.hobbymap.dto;
 
+import com.hobbymap.domain.Format;
+import com.hobbymap.domain.Weekday;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

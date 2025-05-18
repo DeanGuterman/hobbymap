@@ -1,4 +1,4 @@
-package com.hobbymap;
+package com.hobbymap.domain;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,10 +1,14 @@
-package com.hobbymap;
+package com.hobbymap.service;
 
+import com.hobbymap.domain.Format;
+import com.hobbymap.domain.League;
+import com.hobbymap.domain.Weekday;
+import com.hobbymap.repository.LeagueRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static com.hobbymap.LeagueSpecifications.*;
+import static com.hobbymap.specification.LeagueSpecifications.*;
 
 
 // Service for League related business logic

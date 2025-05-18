@@ -1,12 +1,16 @@
-package com.hobbymap;
+package com.hobbymap.controller;
 
+import com.hobbymap.domain.Format;
+import com.hobbymap.domain.League;
+import com.hobbymap.domain.Weekday;
+import com.hobbymap.dto.LeagueDTO;
+import com.hobbymap.mapper.LeagueMapper;
+import com.hobbymap.service.LeagueService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 // REST controller for League related endpoints

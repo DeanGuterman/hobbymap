@@ -1,4 +1,7 @@
-package com.hobbymap;
+package com.hobbymap.mapper;
+
+import com.hobbymap.domain.League;
+import com.hobbymap.dto.LeagueDTO;
 
 public class LeagueMapper {
     public static LeagueDTO toDto(League league){

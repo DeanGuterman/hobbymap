@@ -1,5 +1,8 @@
-package com.hobbymap;
+package com.hobbymap.specification;
 
+import com.hobbymap.domain.Format;
+import com.hobbymap.domain.League;
+import com.hobbymap.domain.Weekday;
 import org.springframework.data.jpa.domain.Specification;
 
 

@@ -1,4 +1,4 @@
-package com.hobbymap;
+package com.hobbymap.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
