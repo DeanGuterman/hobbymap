@@ -18,7 +18,7 @@ public class LeagueSpecifications {
         };
     }
 
-    public static Specification<League> filterByFormat(String format){
+    public static Specification<League> filterByFormat(Format format){
         return (root, query, cb) -> {
             if (format == null) return null;
             return cb.equal(root.get("format"), format);
@@ -32,7 +32,7 @@ public class LeagueSpecifications {
         };
     }
 
-    public static Specification<League> filterByWeekday(String weekday){
+    public static Specification<League> filterByWeekday(Weekday weekday){
         return (root, query, cb) -> {
             if (weekday == null) return null;
             return cb.equal(root.get("weekday"), weekday);

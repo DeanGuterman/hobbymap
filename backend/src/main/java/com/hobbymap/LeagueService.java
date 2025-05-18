@@ -17,7 +17,7 @@ public class LeagueService {
     }
 
     // Get leagues filtered by optional criteria
-    public List<League> getLeagues(String city, String format, String name, String weekday){
+    public List<League> getLeagues(String city, Format format, String name, Weekday weekday){
         return leagueRepository.findAll(filterByCity(city)
                 .and(filterByFormat(format))
                 .and(filterByName(name))

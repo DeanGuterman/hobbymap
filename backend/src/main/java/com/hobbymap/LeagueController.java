@@ -22,19 +22,10 @@ public class LeagueController {
     @GetMapping("/leagues")
     public ResponseEntity<List<LeagueDTO>> getLeagues(
             @RequestParam(required = false) String city,
-            @RequestParam(required = false) String format,
+            @RequestParam(required = false) Format format,
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String weekday
+            @RequestParam(required = false) Weekday weekday
     ){
-        Format formatEnum = null;
-        Weekday weekdayEnum = null;
-
-        try {
-            if (format != null) formatEnum = Format.valueOf(format.toUpperCase());
-            if (weekday != null) weekdayEnum = Weekday.valueOf(weekday.toUpperCase());
-        } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("Invalid value for 'format' or 'weekday'");
-        }
 
         List<League> leagues = leagueService.getLeagues(city, format, name, weekday);
         List<LeagueDTO> leaguesDTO = leagues.stream()
