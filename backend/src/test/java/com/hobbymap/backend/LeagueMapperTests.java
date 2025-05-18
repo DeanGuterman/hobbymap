@@ -14,6 +14,8 @@ public class LeagueMapperTests {
     @Test
     void testToDto(){
         League league = League.builder()
+                .longitude(0.0)
+                .latitude(0.0)
                 .name("Test League")
                 .city("Tel Aviv")
                 .format(Format.COMMANDER)
