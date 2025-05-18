@@ -5,13 +5,15 @@ import com.hobbymap.dto.LeagueDTO;
 
 public class LeagueMapper {
     public static LeagueDTO toDto(League league){
+        if (league == null) return null;
+
         return LeagueDTO.builder()
                 .city(league.getCity())
                 .format(league.getFormat())
                 .name(league.getName())
                 .weekday(league.getWeekday())
-                .latitude(league.getLatitude())
-                .longitude(league.getLatitude())
+                .latitude(league.getLatitude() != null ? league.getLatitude() : 0.0)
+                .longitude(league.getLatitude() != null ? league.getLongitude() : 0.0)
                 .facebookLink(league.getFacebookLink())
                 .instagramLink(league.getInstagramLink())
                 .personOfContact(league.getPersonOfContact())
