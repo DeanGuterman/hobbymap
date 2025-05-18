@@ -26,8 +26,8 @@ public class League {
     private String name;
     private String city;
 
-    private String format; // EDH, Standard, Modern, Limited etc
-    private String weekday; // Should be enum
+    private Format format; // EDH, Standard, Modern, Limited etc
+    private Weekday weekday; // Should be enum
 
     private String personOfContact;
     private String personOfContactPhone;
