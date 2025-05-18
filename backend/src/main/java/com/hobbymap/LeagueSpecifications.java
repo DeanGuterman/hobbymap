@@ -21,7 +21,7 @@ public class LeagueSpecifications {
     public static Specification<League> filterByFormat(String format){
         return (root, query, cb) -> {
             if (format == null) return null;
-            return cb.equal(root.get("format"), Format.valueOf(format.toUpperCase()));
+            return cb.equal(root.get("format"), format);
         };
     }
 
@@ -35,7 +35,7 @@ public class LeagueSpecifications {
     public static Specification<League> filterByWeekday(String weekday){
         return (root, query, cb) -> {
             if (weekday == null) return null;
-            return cb.equal(root.get("weekday"), Format.valueOf(weekday.toUpperCase()));
+            return cb.equal(root.get("weekday"), weekday);
         };
     }
 }

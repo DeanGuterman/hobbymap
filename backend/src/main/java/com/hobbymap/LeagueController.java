@@ -26,6 +26,16 @@ public class LeagueController {
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String weekday
     ){
+        Format formatEnum = null;
+        Weekday weekdayEnum = null;
+
+        try {
+            if (format != null) formatEnum = Format.valueOf(format.toUpperCase());
+            if (weekday != null) weekdayEnum = Weekday.valueOf(weekday.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid value for 'format' or 'weekday'");
+        }
+
         List<League> leagues = leagueService.getLeagues(city, format, name, weekday);
         List<LeagueDTO> leaguesDTO = leagues.stream()
                 .map(LeagueMapper::toDto)
