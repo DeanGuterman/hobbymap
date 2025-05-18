@@ -11,8 +11,8 @@ import lombok.Setter;
 @Builder
 public class LeagueDTO {
     private String city;
-    private String format;
+    private Format format;
     private String name;
-    private String weekday;
+    private Weekday weekday;
 
 }
