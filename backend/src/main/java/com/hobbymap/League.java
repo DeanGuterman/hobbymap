@@ -1,9 +1,6 @@
 package com.hobbymap;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 
@@ -26,8 +23,11 @@ public class League {
     private String name;
     private String city;
 
+    @Enumerated(EnumType.STRING)
     private Format format; // EDH, Standard, Modern, Limited etc
-    private Weekday weekday; // Should be enum
+
+    @Enumerated(EnumType.STRING)
+    private Weekday weekday; // Sunday, Monday etc
 
     private String personOfContact;
     private String personOfContactPhone;
