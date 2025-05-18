@@ -22,7 +22,7 @@ public class LeagueController {
     @GetMapping("/leagues")
     public ResponseEntity<List<LeagueDTO>> getLeagues(
             @RequestParam(required = false) String city,
-            @RequestParam(required = false) Format format,
+            @RequestParam(required = false) Format format, // Spring handles conversion
             @RequestParam(required = false) String name,
             @RequestParam(required = false) Weekday weekday
     ){
