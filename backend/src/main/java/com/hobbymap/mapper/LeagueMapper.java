@@ -13,7 +13,7 @@ public class LeagueMapper {
                 .name(league.getName())
                 .weekday(league.getWeekday())
                 .latitude(league.getLatitude())
-                .longitude(league.getLatitude())
+                .longitude(league.getLongitude())
                 .facebookLink(league.getFacebookLink())
                 .instagramLink(league.getInstagramLink())
                 .personOfContact(league.getPersonOfContact())
